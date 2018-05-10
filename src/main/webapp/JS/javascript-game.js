@@ -23,8 +23,7 @@ function GuessLetter(letter) {
         dataType: "json",
         data: JSON.stringify(letter),
         contentType: "application/json",
-        success: function (response) {
-            console.log(response);
+        success: function () {
             getScreenInfo();
         },
         error: function (error) {
@@ -37,8 +36,7 @@ function restart() {
     $.ajax({
         type: "POST",
         url: '/rest/Game/Restart',
-        success: function (response) {
-            console.log("Restart: " + response);
+        success: function () {
             getScreenInfo();
         },
         error: function (error) {

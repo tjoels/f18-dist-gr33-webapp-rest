@@ -14,7 +14,6 @@ public class Game {
     public String ScreenUpdater() throws RemoteException, NotBoundException, MalformedURLException {
         String output = "it works!";
 
-
         return output;
     }
 
@@ -22,7 +21,6 @@ public class Game {
     @Path("/Guess={letter}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public void GuessLetter(@PathParam("letter")String text) {
-
 
     }
 
