@@ -1,7 +1,6 @@
 package rest_services;
 
 import Connector.Connector;
-import galgeleg.lobby.Client;
 import galgeleg.logik.LobbyInterface;
 
 import javax.ws.rs.*;
@@ -14,36 +13,36 @@ import java.rmi.RemoteException;
 @Path("Login")
 public class Login {
 
-    Connector connector;
-
     @GET
     @Produces({MediaType.TEXT_PLAIN})
     public String showMessage() {
+        System.out.println("Login accessed");
         return "it works!";
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Path("/Username={username}&Password={password}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public boolean VerifyUser(@FormParam("username") String username, @FormParam("password") String password)
+    public boolean VerifyUser(@PathParam("username") String username, @PathParam("password") String password)
             throws RemoteException, MalformedURLException, NotBoundException {
+
+        Connector connector = new Connector();
 
         LobbyInterface lobbyInterface = (LobbyInterface)
                 Naming.lookup("rmi://" + connector.HOSTLOCAL + ":" + connector.PORT +
-                        "/" + connector.ENDPOINT);
-
-        System.out.println(username + " : " + password);
+                        "/" + connector.ENDPOINT + "");
 
         if (!lobbyInterface.login(username, password)) {
             System.out.println("Login failed.");
             return false;
         }
 
-        try {
-            new Client(username, lobbyInterface);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+        /*
+        Method to for starting the game.
+        Use only when skipping the Lobby.
+         */
+        //lobbyInterface.joinGameQueue(username);
+
         return true;
     }
 }

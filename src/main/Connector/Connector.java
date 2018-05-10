@@ -3,7 +3,7 @@ package Connector;
 public class Connector {
 
     //Remote server address.
-    public final String HOST = "ubuntu4.saluton.dk";
+    public final String HOST = "130.225.170.244";
     public final int PORT = 1076;
     public final String ENDPOINT = "galgeleg";
 

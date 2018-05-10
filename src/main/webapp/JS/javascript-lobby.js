@@ -1,7 +1,12 @@
-function sendMessage(message) {
+function sendMessage() {
+    var message = $('#usermsg');
+    event.preventDefault();
+
+    console.log(message)
+
     $.ajax({
         type: 'POST',
-        url: '/Lobby/SendMessage/Message=' + message,
+        url: 'rest/Lobby/SendMessage/Message=' + message,
         dataType: 'json',
         data: JSON.stringify(message),
         contentType: 'application/json',
