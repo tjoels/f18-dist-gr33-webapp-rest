@@ -1,7 +1,7 @@
 function PostLetter(letter) {
     $.ajax({
         type: "POST",
-        url: "/Game/Guess=" + letter,
+        url: "rest/Game/Guess=" + letter,
         dataType: "json",
         data: JSON.stringify(letter),
         contentType: "application/json",

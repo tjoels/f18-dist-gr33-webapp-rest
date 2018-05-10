@@ -1,7 +1,7 @@
 function sendMessage(message) {
     $.ajax({
         type: 'POST',
-        url: '/Lobby/SendMessage/Message=' + message,
+        url: 'rest/Lobby/SendMessage/Message=' + message,
         dataType: 'json',
         data: JSON.stringify(message),
         contentType: 'application/json',
