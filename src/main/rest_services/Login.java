@@ -1,7 +1,6 @@
 package rest_services;
 
 import Connector.Connector;
-import galgeleg.lobby.Client;
 import galgeleg.logik.LobbyInterface;
 
 import javax.ws.rs.*;
@@ -38,11 +37,12 @@ public class Login {
             return false;
         }
 
-        try {
-            new Client(username, lobbyInterface);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+        /*
+        Method to for starting the game.
+        Use only when skipping the Lobby.
+         */
+        //lobbyInterface.joinGameQueue(username);
+
         return true;
     }
 }

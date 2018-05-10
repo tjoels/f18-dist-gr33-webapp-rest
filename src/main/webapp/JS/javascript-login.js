@@ -1,4 +1,5 @@
 function Login() {
+    document.getElementById("loading").style.display = 'inline';
     data = $('#login').serializeArray();
 
     var username = data[0]['value'];
@@ -16,7 +17,7 @@ function Login() {
             if (response) {
                 document.getElementById("loading").style.display = 'none';
                 document.getElementById("login").style.display = 'none';
-                document.getElementById("lobby").style.display = 'inline';
+                document.getElementById("game").style.display = 'inline';
 
             } else {
                 alert("Username or password incorrect !")

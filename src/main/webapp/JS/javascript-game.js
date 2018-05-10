@@ -1,17 +1,31 @@
-function PostLetter(letter) {
+function updateScreenInfo(info){
+    document.getElementById(VisibleWord).innerHTML()
+    document.getElementById('keyboardoutput').innerText = info;
+}
+
+function getScreenInfo() {
+    $.ajax({
+        type: 'GET',
+        url: '/rest/Game',
+        success: function (response) {
+            updateScreenInfo(response)
+        },
+        error: function (error) {
+            console.log("Something went wrong", error);
+        }
+    });
+}
+
+function GuessLetter(letter) {
     $.ajax({
         type: "POST",
-        url: "/Game/Guess=" + letter,
+        url: "/rest/Game/Guess=" + letter,
         dataType: "json",
         data: JSON.stringify(letter),
         contentType: "application/json",
         success: function (response) {
             console.log(response);
-            if (response) {
-
-            } else {
-                alert(response)
-            }
+            getScreenInfo();
         },
         error: function (error) {
             console.log("Something went wrong", error);
@@ -20,13 +34,12 @@ function PostLetter(letter) {
 }
 
 function restart() {
-
     $.ajax({
         type: "POST",
-        url: '/Game/Restart',
+        url: '/rest/Game/Restart',
         success: function (response) {
             console.log("Restart: " + response);
-            document.getElementById(VisibleWord).innerHTML()
+            getScreenInfo();
         },
         error: function (error) {
             console.log("Something went wrong", error);
