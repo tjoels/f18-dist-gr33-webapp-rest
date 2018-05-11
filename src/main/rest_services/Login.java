@@ -29,19 +29,13 @@ public class Login {
         Connector connector = new Connector();
 
         LobbyInterface lobbyInterface = (LobbyInterface)
-                Naming.lookup("rmi://" + connector.HOSTLOCAL + ":" + connector.PORT +
+                Naming.lookup("rmi://" + connector.HOST + ":" + connector.PORT +
                         "/" + connector.ENDPOINT + "");
 
         if (!lobbyInterface.login(username, password)) {
             System.out.println("Login failed.");
             return false;
         }
-
-        /*
-        Method to for starting the game.
-        Use only when skipping the Lobby.
-         */
-        //lobbyInterface.joinGameQueue(username);
 
         return true;
     }

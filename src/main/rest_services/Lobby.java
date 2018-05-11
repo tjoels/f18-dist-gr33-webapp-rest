@@ -22,7 +22,7 @@ public class Lobby {
         Connector connector = new Connector();
 
         LobbyInterface lobbyInterface = (LobbyInterface)
-                Naming.lookup("rmi://" + connector.HOSTLOCAL + ":" + connector.PORT +
+                Naming.lookup("rmi://" + connector.HOST + ":" + connector.PORT +
                         "/" + connector.ENDPOINT);
 
         String from = "test";
@@ -37,7 +37,7 @@ public class Lobby {
         Connector connector = new Connector();
 
         LobbyInterface lobbyInterface = (LobbyInterface)
-                Naming.lookup("rmi://" + connector.HOSTLOCAL + ":" + connector.PORT +
+                Naming.lookup("rmi://" + connector.HOST + ":" + connector.PORT +
                         "/" + connector.ENDPOINT);
 
         String username = "test";
