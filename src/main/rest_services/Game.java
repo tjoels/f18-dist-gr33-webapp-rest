@@ -21,6 +21,8 @@ public class Game {
     @Path("/Guess={letter}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public void GuessLetter(@PathParam("letter")String text) {
+        System.out.println("Guessed on: " + text);
+
 
     }
 

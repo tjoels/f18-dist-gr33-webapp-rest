@@ -1,5 +1,11 @@
+$(document).ready(function() {
+    console.log("on load!")
+    getScreenInfo();
+    console.log("on loaded!")
+}
+
 function updateScreenInfo(info){
-    document.getElementById(VisibleWord).innerHTML()
+    document.getElementById('VisibleWord').innerHTML()
     document.getElementById('keyboardoutput').innerText = info;
 }
 
@@ -8,6 +14,7 @@ function getScreenInfo() {
         type: 'GET',
         url: '/rest/Game',
         success: function (response) {
+            console.log(response)
             updateScreenInfo(response)
         },
         error: function (error) {

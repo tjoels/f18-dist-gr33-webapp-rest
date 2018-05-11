@@ -41,7 +41,7 @@ public class Login {
         Method to for starting the game.
         Use only when skipping the Lobby.
          */
-        //lobbyInterface.joinGameQueue(username);
+        lobbyInterface.joinGameQueue(username);
 
         return true;
     }

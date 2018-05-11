@@ -19,6 +19,8 @@ function Login() {
                 document.getElementById("login").style.display = 'none';
                 document.getElementById("game").style.display = 'inline';
 
+                $("#game").load("game.html");
+
             } else {
                 alert("Username or password incorrect !")
             }
