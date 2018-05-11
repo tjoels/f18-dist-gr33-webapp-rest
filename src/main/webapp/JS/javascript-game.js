@@ -1,8 +1,6 @@
 $(document).ready(function() {
-    console.log("on load!")
     getScreenInfo();
-    console.log("on loaded!")
-}
+});
 
 function updateScreenInfo(info){
     document.getElementById('VisibleWord').innerHTML()
