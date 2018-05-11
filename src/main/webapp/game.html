@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game page</title>
+
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div align="center">
+    <!--Øverste række knapper-->
+    <button type="button" class="btn btn-danger btn-lg" id="buttonhighscore" onclick=restart()>Highscore
+    </button>
+    <button type="button" class="btn btn-danger btn-lg" id="buttonrestart" onclick=restart()>Restart</button>
+    <br>
+    <br>
+    <p id="VisibleWord" style="display:inline"></p>
+    <p id="keyboardoutput" style="display:inline">
+        Der gik noget galt ved indlæsningen af serverens output. Prøv igen!
+    </p>
+    <!--Første række bogstaver--><br><br>
+    <button type="button" class="btn btn-info btn-lg" id="q" onclick=GuessLetter("q")>q</button>
+    <button type="button" class="btn btn-info btn-lg" id="w" onclick=GuessLetter("w")>w</button>
+    <button type="button" class="btn btn-info btn-lg" id="e" onclick=GuessLetter("e")>e</button>
+    <button type="button" class="btn btn-info btn-lg" id="r" onclick=GuessLetter("r")>r</button>
+    <button type="button" class="btn btn-info btn-lg" id="t" onclick=GuessLetter("t")>t</button>
+    <button type="button" class="btn btn-info btn-lg" id="y" onclick=GuessLetter("y")>y</button>
+    <button type="button" class="btn btn-info btn-lg" id="u" onclick=GuessLetter("u")>u</button>
+    <button type="button" class="btn btn-info btn-lg" id="i" onclick=GuessLetter("i")>i</button>
+    <button type="button" class="btn btn-info btn-lg" id="o" onclick=GuessLetter("o")>o</button>
+    <button type="button" class="btn btn-info btn-lg" id="p" onclick=GuessLetter("p")>p</button>
+    <button type="button" class="btn btn-info btn-lg" id="å" onclick=GuessLetter("å")>å</button>
+    <br>
+    <br>
+    <!--Anden række bogstaver-->
+    <button type="button" class="btn btn-info btn-lg" id="a" onclick=GuessLetter("a")>a</button>
+    <button type="button" class="btn btn-info btn-lg" id="s" onclick=GuessLetter("s")>s</button>
+    <button type="button" class="btn btn-info btn-lg" id="d" onclick=GuessLetter("d")>d</button>
+    <button type="button" class="btn btn-info btn-lg" id="f" onclick=GuessLetter("f")>f</button>
+    <button type="button" class="btn btn-info btn-lg" id="g" onclick=GuessLetter("g")>g</button>
+    <button type="button" class="btn btn-info btn-lg" id="h" onclick=GuessLetter("h")>h</button>
+    <button type="button" class="btn btn-info btn-lg" id="j" onclick=GuessLetter("j")>j</button>
+    <button type="button" class="btn btn-info btn-lg" id="k" onclick=GuessLetter("k")>k</button>
+    <button type="button" class="btn btn-info btn-lg" id="l" onclick=GuessLetter("l")>l</button>
+    <button type="button" class="btn btn-info btn-lg" id="æ" onclick=GuessLetter("æ")>æ</button>
+    <button type="button" class="btn btn-info btn-lg" id="ø" onclick=GuessLetter("ø")>ø</button>
+    <br>
+    <br>
+    <!--Tredje række bogstaver-->
+    <button type="button" class="btn btn-info btn-lg" id="z" onclick=GuessLetter("z")>z</button>
+    <button type="button" class="btn btn-info btn-lg" id="x" onclick=GuessLetter("x")>x</button>
+    <button type="button" class="btn btn-info btn-lg" id="c" onclick=GuessLetter("c")>c</button>
+    <button type="button" class="btn btn-info btn-lg" id="v" onclick=GuessLetter("v")>v</button>
+    <button type="button" class="btn btn-info btn-lg" id="b" onclick=GuessLetter("b")>b</button>
+    <button type="button" class="btn btn-info btn-lg" id="n" onclick=GuessLetter("n")>n</button>
+    <button type="button" class="btn btn-info btn-lg" id="m" onclick=GuessLetter("m")>m</button>
+</div>
+
+<script src = "JS/javascript-game.js"></script>
+
+</body>
+</html>

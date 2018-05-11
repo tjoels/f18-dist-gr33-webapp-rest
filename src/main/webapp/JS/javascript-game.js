@@ -1,5 +1,9 @@
+$(document).ready(function() {
+    getScreenInfo();
+});
+
 function updateScreenInfo(info){
-    document.getElementById(VisibleWord).innerHTML()
+    document.getElementById('VisibleWord').innerHTML()
     document.getElementById('keyboardoutput').innerText = info;
 }
 
@@ -8,6 +12,7 @@ function getScreenInfo() {
         type: 'GET',
         url: '/rest/Game',
         success: function (response) {
+            console.log(response)
             updateScreenInfo(response)
         },
         error: function (error) {
@@ -23,8 +28,7 @@ function GuessLetter(letter) {
         dataType: "json",
         data: JSON.stringify(letter),
         contentType: "application/json",
-        success: function (response) {
-            console.log(response);
+        success: function () {
             getScreenInfo();
         },
         error: function (error) {
@@ -37,8 +41,7 @@ function restart() {
     $.ajax({
         type: "POST",
         url: '/rest/Game/Restart',
-        success: function (response) {
-            console.log("Restart: " + response);
+        success: function () {
             getScreenInfo();
         },
         error: function (error) {
