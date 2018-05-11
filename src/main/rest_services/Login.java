@@ -37,12 +37,6 @@ public class Login {
             return false;
         }
 
-        /*
-        Method to for starting the game.
-        Use only when skipping the Lobby.
-         */
-        //lobbyInterface.joinGameQueue(username);
-
         return true;
     }
 }
